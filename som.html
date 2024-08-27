@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic-Based Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+        .question { margin-bottom: 20px; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+    <script>
+        function submitQuiz() {
+            // Get answers
+            const answer1 = document.querySelector('input[name="question1"]:checked').value;
+            const answer2 = document.querySelector('input[name="question2"]:checked').value;
+            
+            let result;
+            
+            // Simple logic based on answers
+            if (answer1 === "A" && answer2 === "A") {
+                result = "You are Type X!";
+            } else if (answer1 === "B" && answer2 === "B") {
+                result = "You are Type Y!";
+            } else {
+                result = "You are Type Z!";
+            }
+
+            // Display result
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Logic-Based Quiz</h1>
+    <form onsubmit="event.preventDefault(); submitQuiz();">
+        <div class="question">
+            <p>Question 1: What is your favorite color?</p>
+            <input type="radio" name="question1" value="A" required> Red<br>
+            <input type="radio" name="question1" value="B"> Blue<br>
+        </div>
+        <div class="question">
+            <p>Question 2: What is your favorite animal?</p>
+            <input type="radio" name="question2" value="A" required> Cat<br>
+            <input type="radio" name="question2" value="B"> Dog<br>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <p id="result"></p>
+</body>
+</html>
