@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.65">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Logic-Based Quiz&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.question { margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#result { margin-top: 20px; font-weight: bold; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function submitQuiz() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Get answers</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const answer1 = document.querySelector('input[name="question1"]:checked').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const answer2 = document.querySelector('input[name="question2"]:checked').value;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let result;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Simple logic based on answers</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (answer1 === "A" &amp;&amp; answer2 === "A") {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>result = "You are Type X!";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (answer1 === "B" &amp;&amp; answer2 === "B") {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>result = "You are Type Y!";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>result = "You are Type Z!";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Display result</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById("result").innerText = result;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Send data to backend (Optional: Set up backend separately)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// fetch('https://your-backend-url', {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">    </span>method: 'POST',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">    </span>headers: {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">        </span>'Content-Type': 'application/json'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">    </span>body: JSON.stringify({</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">        </span>answer1: answer1,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">        </span>answer2: answer2,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">        </span>result: result</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">    </span>})</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// }).then(response =&gt; response.json())</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">  </span>.then(data =&gt; alert(data.message))</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// <span class="Apple-converted-space">  </span>.catch(error =&gt; console.error('Error:', error));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Logic-Based Quiz&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;form onsubmit="event.preventDefault(); submitQuiz();"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Question 1: What is your favorite color?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="radio" name="question1" value="A" required&gt; Red&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="radio" name="question1" value="B"&gt; Blue&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Question 2: What is your favorite animal?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="radio" name="question2" value="A" required&gt; Cat&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="radio" name="question2" value="B"&gt; Dog&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button type="submit"&gt;Submit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p id="result"&gt;&lt;/p&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
